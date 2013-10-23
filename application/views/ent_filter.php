@@ -14,7 +14,7 @@ $this->load->view('layout/body_menu');
       </div>
       <div class="row bounceInRight animated">
         <div class="one half padded">
-          <form action="#" method="post">
+          <form action="<?php echo site_url('attendance/personnel_ent')?>" method="post">
             <fieldset>
               <div class="row">
                 <div class="four fifth padded">

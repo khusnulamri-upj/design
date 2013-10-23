@@ -5,6 +5,10 @@
 
 .tablelike .row:first-child {
     border-top:1px solid #ddd;
+    background:lightgrey;
+    font-weight:700;
+    font-size:1em;
+    color:#5a5a5a;
 }
 
 .tablelike .row:last-child {

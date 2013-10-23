@@ -7,8 +7,28 @@ $this->load->view('layout/body_menu');
       <div class="padded">
         <div class="row">
           <div class="one whole bounceInRight animated">
-            <h3 class="zero museo-slab">Laporan Presensi Karyawan/Dosen Per Bulan</h3>
-            <!--<p class="quicksand">Laporan Presensi Karyawan/Dosen Per Bulan</p>-->
+            <h3 class="zero museo-slab">Input Presensi Karyawan/Dosen</h3>
+            <!--<p class="quicksand">Input Presensi Karyawan/Dosen</p>-->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="one half padded">
+          <div class="bounceInRight animated">
+            <div class="box info">
+              <div class="equalize row">
+                <div class="two sixth half-padded">Nama Karyawan/Dosen</div>
+                <div class="four sixth half-padded"><b>Khusnul Amri</b></div>
+              </div>
+              <div class="equalize row">
+                <div class="two sixth half-padded">Bagian/Prodi</div>
+                <div class="four sixth half-padded"><b>ICT</b></div>
+              </div>
+              <div class="equalize row">
+                <div class="two sixth half-padded">Bulan</div>
+                <div class="four sixth half-padded"><b>September 2013</b></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
