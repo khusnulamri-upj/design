@@ -27,16 +27,25 @@ class Attendance extends CI_Controller {
         $this->load->view('ent_filter',$data);
     }
     
-    public function personnel_ent() {
+    /*public function personnel_ent() {
         $this->load->model('Attendance_model');
         $arr_ket[0] = '';
         $data['keterangan_option'] = $this->Attendance_model->get_all_keterangan($arr_ket);
+        $data['attendance'] = $this->Attendance_model->get_attendance_data_personnel_monthly($this->input->post('personnel'),$this->input->post('year'),$this->input->post('month'));
+        $this->load->view('ent_personnel',$data);
+    }*/
+    
+    public function personnel_ent($personnel,$year,$month) {
+        $this->load->model('Attendance_model');
+        $arr_ket[0] = '';
+        $data['keterangan_option'] = $this->Attendance_model->get_all_keterangan($arr_ket);
+        $data['attendance'] = $this->Attendance_model->get_attendance_data_personnel_monthly($personnel,$year,$month);
         $this->load->view('ent_personnel',$data);
     }
     
     //menu report
     public function report() {
-        //$this->load->view('layout');
+        $this->load->view('layout');
     }
     
     public function filter_prsn_mnth_rpt() {

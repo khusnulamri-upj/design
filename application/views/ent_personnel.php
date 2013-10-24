@@ -13,132 +13,68 @@ $this->load->view('layout/body_menu');
         </div>
       </div>
       <div class="row">
-        <div class="one half padded">
+        <div class="three fifth padded">
           <div class="bounceInRight animated">
             <div class="box info">
               <div class="equalize row">
-                <div class="two sixth half-padded">Nama Karyawan/Dosen</div>
-                <div class="four sixth half-padded"><b>Khusnul Amri</b></div>
+                <div class="two seventh half-padded">Nama Karyawan/Dosen</div>
+                <div class="five seventh half-padded"><b>Khusnul Amri</b></div>
               </div>
               <div class="equalize row">
-                <div class="two sixth half-padded">Bagian/Prodi</div>
-                <div class="four sixth half-padded"><b>ICT</b></div>
+                <div class="two seventh half-padded">Bagian/Prodi</div>
+                <div class="five seventh half-padded"><b>ICT</b></div>
               </div>
               <div class="equalize row">
-                <div class="two sixth half-padded">Bulan</div>
-                <div class="four sixth half-padded"><b>September 2013</b></div>
+                <div class="two seventh half-padded">Bulan</div>
+                <div class="five seventh half-padded"><b>September 2013</b></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="one half padded">
+        <div class="three fifth padded">
           <div class="bounceInLeft animated tablelike">
             <div class="equalize row">
-              <div class="one sixth half-padded align-center">Tanggal</div>
-              <div class="one sixth half-padded align-center">Jam Masuk</div>
-              <div class="one sixth half-padded align-center">Jam Keluar</div>
-              <div class="one sixth half-padded align-center">Durasi Keterlambatan</div>
-              <div class="two sixth half-padded align-center">Keterangan</div>
+              <div class="one seventh half-padded align-center">Tanggal</div>
+              <div class="one seventh half-padded align-center">Hari</div>
+              <div class="one seventh half-padded align-center">Jam Masuk</div>
+              <div class="one seventh half-padded align-center">Jam Keluar</div>
+              <div class="one seventh half-padded align-center">Durasi Keterlambatan</div>
+              <div class="two seventh half-padded align-center">Keterangan</div>
             </div>
-            <div class="equalize row">
-              <div class="one sixth half-padded align-center">01/09/2013</div>
-              <div class="one sixth half-padded align-center">07:40</div>
-              <div class="one sixth half-padded align-center">16:30</div>
-              <div class="one sixth half-padded align-center">00:00</div>
-              <div class="two sixth half-padded align-center"><span class="select-wrap"><?php echo form_dropdown('keterangan', isset($keterangan_option)?$keterangan_option:array()); ?></span></div>
-            </div>
-            <div class="equalize row">
-              <div class="one sixth half-padded align-center red-bg">01/09/2013</div>
-              <div class="one sixth half-padded align-center red">07:40</div>
-              <div class="one sixth half-padded align-center">16:30</div>
-              <div class="one sixth half-padded align-center">00:00</div>
-              <div class="two sixth half-padded align-center"><span class="select-wrap"><?php echo form_dropdown('personnel', isset($personnel_option)?$personnel_option:array()); ?></span></div>
-            </div>
-            <div class="equalize row">
-              <div class="one sixth half-padded align-center">01/09/2013</div>
-              <div class="one sixth half-padded align-center">07:40</div>
-              <div class="one sixth half-padded align-center">16:30</div>
-              <div class="one sixth half-padded align-center">00:00</div>
-              <div class="two sixth half-padded align-center"><span class="select-wrap"><?php echo form_dropdown('personnel', isset($personnel_option)?$personnel_option:array()); ?></span></div>
-            </div>
-            <div class="equalize row red-bg">
-              <div class="one sixth align-center">01/09/2013</div>
-              <div class="one sixth align-center">07:40</div>
-              <div class="one sixth align-center">16:30</div>
-              <div class="one sixth align-center">00:00</div>
-              <div class="two sixth align-center"><span class="select-wrap"><?php echo form_dropdown('personnel', isset($personnel_option)?$personnel_option:array()); ?></span></div>
-            </div>
-            <div class="equalize row">
-              <div class="one sixth half-padded align-center">01/09/2013</div>
-              <div class="one sixth half-padded align-center">07:40</div>
-              <div class="one sixth half-padded align-center">16:30</div>
-              <div class="one sixth half-padded align-center">00:00</div>
-              <div class="two sixth half-padded align-center"><span class="select-wrap"><?php echo form_dropdown('personnel', isset($personnel_option)?$personnel_option:array()); ?></span></div>
-            </div>
-          </div>
-          <div class="bounceInLeft animated">  
-            
-            
-            <div class="row">
-              <div class="one whole padded">
-                <table data-max="14" class="responsive blue">
-                  <thead>
-                    <tr>
-                      <th>Tanggal</th>
-                      <th>Jam Masuk</th>
-                      <th>Jam Keluar</th>
-                      <th>Durasi Keterlambatan</th>
-                      <th colspan="2">Keterangan</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td colspan="2"><span class="select-wrap"><?php echo form_dropdown('personnel', isset($personnel_option)?$personnel_option:array()); ?></span></td>
-                    </tr>
-                    <tr>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                    </tr>
-                    <tr>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                    </tr>
-                    <tr>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td>Footer cell</td>
-                      <td>Footer cell</td>
-                      <td>Footer cell</td>
-                      <td>Footer cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
+            <?php
+            foreach ($attendance as $a) {
+                $mark_is_holiday = '';
+                $mark_is_late = '';
+                $mark_is_early = '';
+                $select_ket = '';
+                if ($a->is_holiday) {
+                    $mark_is_holiday = ' red-bg';
+                }
+                if ($a->is_late) {
+                    $mark_is_late = ' red';
+                }
+                if ($a->is_early) {
+                    $mark_is_early = ' red';
+                }
+                $this->load->helper('custom_html');
+                if ($a->is_same || $a->is_late || $a->is_early || $a->is_blank) {
+                    $select_ket = create_select('keterangan[]',(isset($keterangan_option)?$keterangan_option:array()),(isset($a->opt_keterangan)?$a->opt_keterangan:0));
+                    //$select_ket = form_dropdown('keterangan[]',isset($keterangan_option)?$keterangan_option:array(),isset($a->opt_keterangan)?$a->opt_keterangan:0);
+                }
+                echo "
+                <div class=\"equalize row\">
+                  <div class=\"one seventh padded align-center$mark_is_holiday\">$a->tanggal</div>
+                  <div class=\"one seventh padded align-center$mark_is_holiday\">$a->hari</div>
+                  <div class=\"one seventh padded align-center$mark_is_holiday$mark_is_late\">$a->jam_masuk</div>
+                  <div class=\"one seventh padded align-center$mark_is_holiday$mark_is_early\">$a->jam_keluar</div>
+                  <div class=\"one seventh padded align-center$mark_is_holiday\">$a->detik_telat_masuk</div>
+                  <div class=\"two seventh half-padded align-center$mark_is_holiday\">$select_ket</div>
+                </div>
+                ";
+            }
+            ?>
           </div>
         </div>
       </div>
