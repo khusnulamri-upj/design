@@ -32,6 +32,12 @@ $this->load->view('layout/body_menu');
           </div>
         </div>
       </div>
+      <form action="<?php echo site_url('attendance/save_ent')?>" method="post">
+      <?php
+      echo form_hidden('personnel', $personnel);
+      echo form_hidden('year', $year);
+      echo form_hidden('month', $month);
+      ?>
       <div class="row">
         <div class="three fifth padded">
           <div class="bounceInLeft animated tablelike">
@@ -60,7 +66,7 @@ $this->load->view('layout/body_menu');
                 }
                 $this->load->helper('custom_html');
                 if ($a->is_same || $a->is_late || $a->is_early || $a->is_blank) {
-                    $select_ket = create_select('keterangan[]',(isset($keterangan_option)?$keterangan_option:array()),(isset($a->opt_keterangan)?$a->opt_keterangan:0));
+                    $select_ket = create_select('keterangan['.$a->tgl.']',(isset($keterangan_option)?$keterangan_option:array()),(isset($a->opt_keterangan)?$a->opt_keterangan:0));
                     //$select_ket = form_dropdown('keterangan[]',isset($keterangan_option)?$keterangan_option:array(),isset($a->opt_keterangan)?$a->opt_keterangan:0);
                 }
                 echo "
@@ -78,6 +84,7 @@ $this->load->view('layout/body_menu');
           </div>
         </div>
       </div>
+      </form>
     </div>
 <?php
 $this->load->view('layout/body_link');

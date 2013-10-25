@@ -164,7 +164,8 @@ class Attendance_model extends CI_Model {
             att2.is_early,
             gen_lbr2.is_holiday,
             gen_lbr2.desc_holiday,
-            if(gen_lbr2.is_holiday,0,if(is_late IS NULL,1,0)) AS is_blank
+            if(gen_lbr2.is_holiday,0,if(is_late IS NULL,1,0)) AS is_blank,
+            gen_lbr2.tgl
             FROM (
               SELECT gen_lbr.*
               FROM (  
@@ -173,7 +174,8 @@ class Attendance_model extends CI_Model {
                 IF(lbr.deskripsi IS NULL,0,1) AS is_holiday
                 FROM (  
                     SELECT DATE_FORMAT(DATE_ADD(MAKEDATE(z.tahun, z.gen_date), INTERVAL (z.bulan-1) MONTH),'$fmt_date') AS tanggal,
-                    DATE_FORMAT(DATE_ADD(MAKEDATE(z.tahun, z.gen_date), INTERVAL (z.bulan-1) MONTH),'%a') AS hari
+                    DATE_FORMAT(DATE_ADD(MAKEDATE(z.tahun, z.gen_date), INTERVAL (z.bulan-1) MONTH),'%a') AS hari,
+                    gen_date AS tgl
                     FROM (
                       SELECT gen_date,
                       $tahun AS tahun,
@@ -255,6 +257,49 @@ class Attendance_model extends CI_Model {
         return $return;
     }
     
+    function insert_keterangan($user_id,$tahun,$bulan,$arr_ket) {
+        $tbl = 'attendance';
+        $col_year = 'date';
+        $col_year_alias = 'year';
+        
+        $this->load->database('default');
+        $this->db->trans_start();
+                
+        $row_inserted = -1;
+        foreach ($arr_ket as $key => $value) {
+            if ((isset($value)) && ($value > 0)) {
+                $strcek = "SELECT * FROM keterangan WHERE expired_time IS NULL
+                    AND user_id = $user_id
+                    AND DATE_FORMAT(tgl,'$fmt_date') LIKE DATE_FORMAT(DATE_ADD(MAKEDATE(z.tahun, z.gen_date), INTERVAL (z.bulan-1) MONTH),'$fmt_date')
+                    AND opt_keterangan = $value";
+
+                $querycek = $this->db->query($strcek);
+
+                if ($querycek->num_rows == 0) {
+
+                    $str = "UPDATE keterangan SET expired_time = CURRENT_TIMESTAMP, modified_by = " . $this->session->userdata('credentials') . " WHERE expired_time IS NULL AND user_id = $user_id AND DATE_FORMAT(tgl,'%d/%m/%Y') LIKE '$key_f/$month/$year'";
+
+                    $query = $this->db->query($str);
+
+                    $data_mysql = array(
+                        'user_id' => $user_id,
+                        'tgl' => $tanggal,
+                        'opt_keterangan' => $value,
+                        'created_by' => $this->session->userdata('credentials')
+                    );
+
+                    $this->db->insert('keterangan', $data_mysql);
+                }
+            } else {
+                $key_f = ($key < 10) ? "0" . $key : $key;
+
+                $str = "UPDATE keterangan SET expired_time = CURRENT_TIMESTAMP, modified_by = ".$this->session->userdata('credentials')." WHERE expired_time IS NULL AND user_id = $user_id AND DATE_FORMAT(tgl,'%d/%m/%Y') LIKE '$key_f/$month/$year'";
+
+                $query = $this->db->query($str);
+            }
+        }
+        $this->db->trans_complete();        
+    }
 }
 
 ?>
